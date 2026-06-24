@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alexander Teinum – Bass player based in Kristiansand, Norway.">
+    <meta name="author" content="Alexander Teinum">
+    <title>Alexander Teinum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Catppuccin Macchiato Palette - Monochrome Focus with Rosewater Accents */
+            --base: #24273a;
+            --surface0: #363a4f;
+            --surface1: #494d64;
+            --text: #cad3f5;
+            --subtext1: #b8c0e0;
+            --subtext0: #a5adcb;
+            --rosewater: #f4dbd6; /* The soft, near-white accent */
+            
+            --bg: var(--base);
+            --text-main: var(--text);
+            --text-muted: var(--subtext0);
+            --accent: var(--rosewater);
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            padding: 4rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        section h2 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        section p {
+            font-size: 1.05rem;
+            color: var(--subtext1);
+            margin-bottom: 1.25rem;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-item a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1.1rem;
+            background-color: var(--surface0);
+            border: none;
+            border-radius: 0.75rem;
+            display: block;
+            text-align: center;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+        }
+
+        .contact-item a:hover {
+            background-color: var(--surface1);
+            color: var(--accent);
+        }
+
+        .contact-item a:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 6rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 3rem 1.5rem; }
+            h1 { font-size: 1.75rem; }
+            main { gap: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="alexander-teinum.png" alt="Alexander Teinum" class="profile-pic">
+            <h1>Alexander Teinum</h1>
+            <p class="subtitle">Bass player based in Kristiansand, Norway</p>
+        </header>
+
+        <main>
+            <section id="music">
+                <h2>Music</h2>
+                <p>
+                    I play bass with a focus on <strong>tone, feel, and groove</strong>. 
+                    I deliver supportive, understated bass lines across pop, rock, and melodic, groove-driven music.
+                <p>
+                    <strong>Setup:</strong> Squier Bronco &rarr; Fender Rumble.
+                </p>
+            </section>
+
+            <section id="technical">
+                <h2>Interests</h2>
+                <p>
+                    Beyond music, I have a deep interest in well-crafted <strong>consumer technology</strong>, design minimalism, and <strong>Casio G-SHOCK</strong> watches.
+                </p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <a href="https://github.com/alexanderteinum" target="_blank" rel="noopener noreferrer">github.com/alexanderteinum</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+4741375205">+47 413 75 205</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="mailto:alexander.teinum@icloud.com">alexander.teinum@icloud.com</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 ALEXANDER TEINUM</p>
+        </footer>
+    </div>
+</body>
+</html>
