@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Alexander Teinum – Bass player based in Kristiansand, Norway.">
+    <meta name="author" content="Alexander Teinum">
+    <title>Alexander Teinum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --base: #f8fafc;
+            --surface: #e2e7ee;
+            --text: #0f172a;
+            --subtext1: #334155;
+            --subtext0: #64748b;
+            --accent: #2563eb;
+            --accent-border: rgba(37, 99, 235, 0.24);
+            
+            --bg: var(--base);
+            --text-main: var(--text);
+            --text-muted: var(--subtext0);
+            --font-main: 'Instrument Sans', sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: dark;
+                --base: #111318;
+                --surface: #2c323d;
+                --text: #f3f4f6;
+                --subtext1: #c4c9d2;
+                --subtext0: #9aa3b2;
+                --accent: #8ab4f8;
+                --accent-border: rgba(138, 180, 248, 0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            padding: 4.5rem 1.5rem 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            align-items: center;
+            column-gap: 1.5rem;
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--surface);
+        }
+
+        .profile-pic {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0;
+            filter: saturate(0.75);
+            grid-row: span 2;
+        }
+
+        h1 {
+            grid-column: 2;
+            font-size: clamp(1.45rem, 4.1vw, 2.05rem);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            line-height: 1.25;
+        }
+
+        .subtitle {
+            grid-column: 2;
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 150px minmax(0, 1fr);
+            gap: 1.5rem;
+            padding: 1.8rem 0;
+            border-bottom: 1px solid var(--surface);
+        }
+
+        section h2 {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        section h2::before {
+            color: var(--accent);
+            opacity: 0.8;
+        }
+
+        #music h2::before { content: "01 / "; }
+        #technical h2::before { content: "02 / "; }
+        #contact h2::before { content: "03 / "; }
+
+        section p {
+            font-size: 0.88rem;
+            color: var(--subtext1);
+            margin-bottom: 1.25rem;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid var(--surface);
+        }
+
+        .contact-item a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 500;
+            padding: 0.9rem 0.75rem;
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid var(--surface);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .contact-item a::after {
+            content: "↗︎";
+            font-family: Arial, sans-serif;
+            color: var(--text-muted);
+            margin-left: 1rem;
+        }
+
+        .contact-item a:hover {
+            background-color: var(--surface);
+            color: var(--accent);
+            border-color: var(--accent-border);
+        }
+
+        .contact-item a:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: right;
+            color: var(--text-muted);
+            font-size: 0.67rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 2.5rem 1.25rem; }
+            header { grid-template-columns: 64px 1fr; column-gap: 1rem; margin-bottom: 1.5rem; }
+            .profile-pic { width: 64px; height: 64px; }
+            section { grid-template-columns: 1fr; gap: 1rem; padding: 1.4rem 0; }
+            section h2 { font-size: 0.7rem; }
+            section p { font-size: 0.82rem; }
+            .contact-item a { font-size: 0.74rem; overflow-wrap: anywhere; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="alexander-teinum.png" alt="Alexander Teinum" class="profile-pic">
+            <h1>Alexander Teinum</h1>
+            <p class="subtitle">Bass player based in Kristiansand, Norway</p>
+        </header>
+
+        <main>
+            <section id="music">
+                <h2>Music</h2>
+                <p>
+                    I play bass across pop, rock, and melodic music. I focus on finding the right feel and making sure each bass line supports the song.
+            </section>
+
+            <section id="technical">
+                <h2>Interests</h2>
+                <p>
+                    Outside of music, I enjoy technology, design, and mechanical watches.
+                </p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <a href="https://github.com/alexanderteinum" target="_blank" rel="noopener noreferrer">github.com/alexanderteinum</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+4741375205">+47 413 75 205</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="mailto:alexander.teinum@icloud.com">alexander.teinum@icloud.com</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 ALEXANDER TEINUM</p>
+        </footer>
+    </div>
+</body>
+</html>
